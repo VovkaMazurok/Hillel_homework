@@ -17,7 +17,7 @@ if last_digit == 1 and days != 11:
     result = f"{days} день"
 
     # Якщо остання цифра 2, 3 або 4, але менша за 11 та більша за 19, використовуємо форму "дні"
-elif 2 <= last_digit <= 4 and 11 > days < 19:
+elif 2 <= last_digit <= 4 and not 11 <= days <= 19:
     result = f"{days} дні"
 
     # У всіх інших випадках використовуємо форму "днів"
