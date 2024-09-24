@@ -4,9 +4,10 @@ def second_index(text, some_str):
     if text.count(some_str) <=1:
         return None
     else:
-        ind = text.find(some_str)
-        ind = text.find(some_str, ind+1)
-        return ind
+        first_ind = text.find(some_str)
+        second_ind = text.find(some_str, first_ind+1)
+        return second_ind
+
 
 
 assert second_index("sims", "s") == 3, 'Test1'
