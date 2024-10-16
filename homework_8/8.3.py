@@ -1,5 +1,5 @@
 def find_unique_value(some_list):
-    for numb in some_list:
+    for numb in set(some_list):
         if some_list.count(numb) == 1:
             return numb
 
