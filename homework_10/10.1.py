@@ -7,10 +7,10 @@ def some_gen(begin, end, func):
      n: кількість елементів у послідовності
      func: функція, яка формує значення для послідовності
     """
-    current = begin
-    for _ in range(end):
-        yield current
-        current = func(current)
+
+    for i in range(end):
+        yield begin
+        begin = func(begin)
 
 from inspect import isgenerator
 

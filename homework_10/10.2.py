@@ -18,6 +18,11 @@ def first_word(text):
     # Об'єднуємо список символів у рядок і повертаємо перше слово
     return ''.join(word_chars)
 
+# Простіше рішення
+#def first_word(text):
+    #text = text.replace('.', ' ').replace(',', ' ').split()
+    #return text[0]
+
 # Тести
 assert first_word("Hello world") == "Hello", 'Test1'
 assert first_word("greetings, friends") == "greetings", 'Test2'

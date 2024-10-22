@@ -1,3 +1,4 @@
+
 class Human:
 
     def __init__(self, gender, age, first_name, last_name):
@@ -22,6 +23,10 @@ class Student(Human):
         return (f"gender = {self.gender}, first_name = {self.first_name}, last_name = {self.last_name},"
                 f" age = {self.age}, record_book = {self.record_book}")
 
+
+class GroupOverflowException(Exception):
+    pass
+
 class Group:
 
     def __init__(self, number):
@@ -29,7 +34,11 @@ class Group:
         self.group = set()
 
     def add_student(self, student):
+        if len(self.group) >= 10:
+            raise GroupOverflowException("Максимальна кількість студентів: 10")
+
         self.group.add(student)
+
 
     def delete_student(self, last_name):
         student = self.find_student(last_name)
@@ -48,9 +57,15 @@ class Group:
 
 st1 = Student('Male', 30, 'Steve', 'Jobs', 'AN142')
 st2 = Student('Female', 25, 'Liza', 'Taylor', 'AN145')
+
 gr = Group('PD1')
-gr.add_student(st1)
-gr.add_student(st2)
+try:
+    gr.add_student(st1)
+    gr.add_student(st2)
+
+except GroupOverflowException as e:
+    print("Exception:", e)
+
 print(gr)
 assert str(gr.find_student('Jobs')) == str(st1), 'Test1'
 assert gr.find_student('Jobs2') is None, 'Test2'

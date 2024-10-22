@@ -3,6 +3,11 @@ def is_even(digit):
     check = lambda numb: True if digit % 2 == 0 else False
     return check(digit)
 
+# Простіше рішеня
+#def is_even(digit):
+    #return digit % 2 == 0
+
+
 assert is_even(2) == True, 'Test1'
 assert is_even(5) == False, 'Test2'
 assert is_even(0) == True, 'Test3'
