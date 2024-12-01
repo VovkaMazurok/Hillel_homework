@@ -1,0 +1,19 @@
+random.randrange(start, stop, step)
+
+Випадкове ціле число із діапазону від start до stop
+
+random.randint(A, B)
+
+Випадкове ціле число N (A <= N <= B)
+
+random.choice(sequence)
+
+Випадковий елемент непорожньої послідовності sequence
+
+random.sample(population, k)
+
+Cписок довжиною k із послідовності population
+
+random.random()
+
+Випадкове число від 0 до 1
